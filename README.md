@@ -67,7 +67,7 @@ Lorsque l'on utilise la fonction `malloc` pour réserver de l'espace en mémoire
 La fonction `free` prend simplement en argument l'adresse d'un segment qui a été alloué par la commande `malloc`. On pourrait par exemple avoir la fonction `main` suivante :
 ```C
 int main() {
-    int tab[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int tab[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     int *tab_bis;
     
     tab_bis = unsurdeux(tab, 10);
