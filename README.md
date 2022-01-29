@@ -56,7 +56,7 @@ Pour cela, on utilise la fonction `malloc` qui prend comme argument la taille de
 int *p;
 p = malloc(sizeof(int) * n);
 ```
-Notez que l'on utilise l'instruction `sizeof` pour déterminer l'espace mémoire occupé par un entier, ce qui permet de rester compatible entre les systèmes qui ne codent pas nécessairement les `int` sur le même espace, et permet aussi de ne pas avoir à se poser la question<sup id="fnb_1">[1](#fn_1)</sup>.
+Notez que l'on utilise l'instruction `sizeof` pour déterminer l'espace mémoire occupé par un entier, ce qui permet de rester compatible entre les systèmes qui ne codent pas nécessairement les `int` sur le même espace, et permet aussi de ne pas avoir à se poser la question[^1].
     
 7. Réécrivez la fonction `copie` en utilisant une allocation dynamique pour la variable `tab2`. Compilez et vérifiez que tout se passe bien.
 
@@ -136,7 +136,7 @@ affiche(m1);
 
 Les matrices produites par la fonction `matrice` contiennent des tableaux alloués dynamiquement. Lorsque l'on n'a plus besoin d'une matrice, il faut libérer manuellement l'espace qu'elle occupe. Pour cela, il faut libérer l'espace occupé par chacun des tableaux représentant les lignes, puis l'espace occupé par le tableau principal.
 
-12. Écrivez la fonction `void efface(struct Matrice)` qui libère l'espace occupé par une matrice dont les tableaux ont été alloués dynamiquement<sup id="fnb_2">[2](#fn_2)</sup>.
+12. Écrivez la fonction `void efface(struct Matrice)` qui libère l'espace occupé par une matrice dont les tableaux ont été alloués dynamiquement[^2].
 
 13. Écrivez une fonction `struct Matrice multiplie(struct Matrice m1, struct Matrice m2)` qui calcule le résultat de la multiplication matricielle des matrices `m1` et `m2` (on suppose que le nombre de colonnes de `m1` est égal au nombre de lignes de `m1`).
     **Indication :** Il faut encore une fois créer une nouvelle matrice dont les tableaux sont alloués dynamiquement (de dimensions `m1.nb_lignes` x `m2.nb_colonnes`) et calculer chacun des coefficients en appliquant la règle de multiplication des matrices (il y a trois boucles imbriquées à faire).
@@ -144,6 +144,6 @@ Les matrices produites par la fonction `matrice` contiennent des tableaux allou�
 ---
 Notes :
 
-<b id="fn_1">1.</b> Si l'on veut vraiment bien faire, il est conseillé d'utiliser la syntaxe `p = malloc(sizeof(*p) * n);` qui a le mérite de ne pas faire apparaître explicitement le type de `p`, ce qui permet de le changer plus tard sans avoir à modifier la ligne. [↩](#fnb_1)
+[^1]: Si l'on veut vraiment bien faire, il est conseillé d'utiliser la syntaxe `p = malloc(sizeof(*p) * n);` qui a le mérite de ne pas faire apparaître explicitement le type de `p`, ce qui permet de le changer plus tard sans avoir à modifier la ligne.
 
-<b id="fn_2">2.</b> Attention, il ne faut pas utiliser cette fonction avec une matrice dont les tableaux ont été alloués automatiquement, comme c'était le cas pour la matrice définie avant la question 10. [↩](#fnb_2)
+[^2]: Attention, il ne faut pas utiliser cette fonction avec une matrice dont les tableaux ont été alloués automatiquement, comme c'était le cas pour la matrice définie avant la question 10.
