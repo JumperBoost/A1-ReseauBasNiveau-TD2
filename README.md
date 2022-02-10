@@ -96,7 +96,7 @@ struct Matrice {
     int nb_lignes;
     int nb_colonnes;
     int **valeurs;
-}
+};
 ```
 
 9. Écrivez une fonction `void affiche(struct Matrice)` qui affiche à l'écran la matrice passée en argument.
