@@ -1,3 +1,5 @@
+![](resources/logo.jpeg)
+
 # TD2 - Manipulations de tableaux en C
 
 ## Minmax
